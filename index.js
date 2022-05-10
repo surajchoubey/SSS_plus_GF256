@@ -1,10 +1,13 @@
 const { generate_shares, rebuild_parts } = require('./main.js');
-const utf8encoder = new TextEncoder();
-const utf8decoder = new TextDecoder();
+const prompt = require("prompt-sync")({ 
+	sigint: true 
+});
 
 const main = () => {
 
-    const shares = generate_shares(10, 3, "cypherock");
+    const input = prompt("Enter a string: (e.g. cypherock) ")
+
+    const shares = generate_shares(10, 3, input);
 
     console.log(shares);
 
