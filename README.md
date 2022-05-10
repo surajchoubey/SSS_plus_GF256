@@ -9,7 +9,7 @@ Clone the repo, `cd` into it, and install node package modules.
 ```ruby
 git clone https://github.com/surajchoubey/SSS_plus_GF256/
 cd SSS_plus_GF256/
-# no need of npm install actually no library used
+npm install
 ```
 ## Running the program
 
