@@ -68,7 +68,7 @@ const rebuild_parts = (parts) => {
             points[j][1] = parts[key][i];
         }
 
-        secret[i] = utility.interpolate(points);
+        secret[i] = utility.generate_curve(points);
     }
 
     return utf8decoder.decode(secret);

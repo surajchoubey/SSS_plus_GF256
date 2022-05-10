@@ -15,7 +15,7 @@ const divide = (a, b) => {
     return multiply(a, ANTILOG[255 - LOG[b]]);
 }
 
-const interpolate = (points, minimum_keys) => {
+const generate_curve = (points, minimum_keys) => {
 
     const keys = Object.keys(points);
     // console.log(keys);
@@ -62,4 +62,4 @@ const evaluate = (polynomial, x) => {
 }
 
 exports.evaluate = evaluate;
-exports.interpolate = interpolate;
+exports.generate_curve = generate_curve;
