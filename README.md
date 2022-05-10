@@ -16,7 +16,7 @@ cd SSS_plus_GF256/
 Assuming you are in the same directory run it using `node .`
 Input some string alphanumeric preferably and you can see the output right here.
 In the below test, 10 shares generated and minimum 3 shares required to create the original secret key.
-Currently, user can enter a word and generate keys for it.
+Currently, user can enter a word and generate `n` keys for it and rebuild also using minimum `k` minimum keys.
 
 ```ruby
 {
