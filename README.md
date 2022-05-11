@@ -1,4 +1,4 @@
-# Shamir Secret Sharing algorithm using GF256
+# Shamir Secret Sharing using GF256
 
 This is an implementation of Shamir Sharing Algorithm coupled with GF256 using NodeJS.
 The user can make `n` shares for the original secret key for use minimum `k` keys to generate the original secret key.
