@@ -2,7 +2,7 @@
 
 This is a CLI app which is an implementation of Shamir Sharing Algorithm coupled with GF256 using NodeJS.
 The user can make `n` shares for the original secret key for use minimum `k` keys to generate the original secret key.
-It is very secure and uses advanced mathematics to solve to problem. To use it as an CLI application just add the bin folder to your environment path variable.
+It is very secure and uses advanced mathematics to solve to problem. To use it as an CLI application just add the `bin` folder to your path environment variable.
 
 ## Setup
 Clone the repo, `cd` into it, and install node package modules.
@@ -31,7 +31,7 @@ generate_shares [secret-text] [N] [K] [filename]
 ```
 
 ```ruby
-./generate_shares intelligence 15 5 store.txt
+generate_shares intelligence 15 5 store.txt
 Each share is successfully written to store.txt
 ```
 or you can use the below method and all your secret keys are stored in `shares.txt` in the same directory by default if you leave the argument.
@@ -83,7 +83,7 @@ rebuild_parts [filename]
 ```
 Run the app as CLI using:
 ```ruby
-./rebuild_parts parts_stored.txt
+rebuild_parts parts_stored.txt
 intelligence
 ```
 or you can use the below method and it will assume to read from `parts.txt` in the same directory by default if you leave the argument.
