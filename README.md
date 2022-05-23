@@ -3,8 +3,10 @@
 This is a CLI app which is an implementation of Shamir Sharing Algorithm coupled with GF256 using NodeJS.
 The user can make `n` shares for the original secret key for use minimum `k` keys to generate the original secret key.
 It is very secure and uses advanced mathematics to solve to problem. To use it as an CLI application just add the `bin` folder to your path environment variable. For more information you can have a look on to:
-[https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing)
-[https://en.wikipedia.org/wiki/Finite_field_arithmetic](https://en.wikipedia.org/wiki/Finite_field_arithmetic)
+
+### REFERENCES
+1. [Shamir Secret_Sharing](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing)
+2. [Finite Field Theory](https://en.wikipedia.org/wiki/Finite_field_arithmetic)
 
 ## Setup
 Clone the repo, `cd` into it, and install node package modules.
