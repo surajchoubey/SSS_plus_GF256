@@ -10,64 +10,71 @@ Clone the repo, `cd` into it, and install node package modules.
 git clone https://github.com/surajchoubey/SSS_plus_GF256/
 cd SSS_plus_GF256/
 npm install
+cd bin/
 ```
 ## Running the program
 
-Assuming you are in the same directory run it using `node .`
-Input some string alphanumeric preferably and you can see the output right here.
-In the below test, 10 shares generated and minimum 3 shares required to create the original secret key.
-Currently, user can enter a word and generate `n` keys for it and rebuild also using minimum `k` minimum keys.
+After getting the above task done, and assuming you are in the `bin` directory.
 
+## To create the N shares and use minimum K shares to unlock
+
+Here you need to take care of 4 parameters passed as arguments.
+1. `[input-text]` is the original secret key you want to make shares of.
+2. `[N]` is the total number of secret keys you want to generate.
+3. `[K]` is the minimum number of shares you want to use to reproduce the original secret key.
+4. `[filename]` is the name of the file where you want to store all the keys.
 ```ruby
-{
-  '1': Uint8Array(9) [
-    90, 90,  27, 1, 121,
-    59, 96, 109, 1
-  ],
-  '2': Uint8Array(9) [
-    101, 221,  10, 104,
-    203, 230, 148, 199,
-    131
-  ],
-  '3': Uint8Array(9) [
-     92, 254,  97,   1,
-    215, 175, 155, 201,
-    233
-  ],
-  '4': Uint8Array(9) [
-    164, 143,  2,  13,
-     76,  89, 59, 230,
-     80
-  ],
-  '5': Uint8Array(9) [
-    157, 172, 105, 100,
-     80,  16,  52, 232,
-     58
-  ],
-  '6': Uint8Array(9) [
-    162,  43, 120, 13,
-    226, 205, 192, 66,
-    184
-  ],
-  '7': Uint8Array(9) [
-    155,   8,  19, 100,
-    254, 132, 207,  76,
-    210
-  ],
-  '8': Uint8Array(9) [
-    247, 44, 186, 45,
-    148, 68,  21,  7,
-    240
-  ],
-  '9': Uint8Array(9) [
-    206, 15, 209, 68,
-    136, 13,  26,  9,
-    154
-  ],
-  '10': Uint8Array(9) [
-    241, 136, 192,  45,
-     58, 208, 238, 163,
-     24
-  ]
-}
+./generate_shares intelligence 15 5 store.txt
+Each share is successfully written to store.txt
 ```
+or you can use the below method and all your secret keys are stored in `shares.txt` in the same directory by default if you leave the argument.
+```ruby
+./generate_shares intelligence 15 5
+Each share is successfully written to shares.txt
+```
+
+`shares.txt` from inside looks like this.
+```
+1:85,40,44,30,82,14,1,36,48,126,113,96
+2:53,74,231,197,65,96,90,6,110,56,60,138
+3:138,210,67,144,185,183,244,41,144,132,0,30
+4:49,226,154,213,29,216,233,167,65,56,155,86
+5:42,86,252,74,129,41,35,151,195,237,109,24
+6:25,108,168,30,90,11,176,139,101,121,175,93
+7:129,6,50,175,0,79,188,215,76,0,119,130
+8:112,108,129,22,248,117,0,159,179,227,137,235
+9:234,154,252,104,77,143,227,160,13,76,158,171
+10:15,153,249,215,178,141,84,75,90,199,183,106
+11:22,177,120,135,193,194,113,24,79,196,142,187
+12:165,199,16,211,244,99,253,1,244,13,4,185
+13:24,195,83,73,227,10,188,77,157,103,247,178
+14:174,152,201,121,212,68,195,152,50,62,81,220
+15:144,66,118,205,5,152,68,184,240,248,140,70
+```
+
+## Reproducing the original key using atleast K keys
+
+As we generated the keys using `generate_shares` we can reproduce the original secret key, (illustrated for the word intelligence above).
+Store the keys labelled by their ID in some file called `parts.txt`
+
+`parts.txt` should ideally look like this from inside. In here keys labelled `3`, `7` ,`8`, `10` and `14` (5 minimum keys as set above to reproduce the original secret key).
+
+```
+3:138,210,67,144,185,183,244,41,144,132,0,30
+8:112,108,129,22,248,117,0,159,179,227,137,235
+14:174,152,201,121,212,68,195,152,50,62,81,220
+10:15,153,249,215,178,141,84,75,90,199,183,106
+7:129,6,50,175,0,79,188,215,76,0,119,130
+```
+
+Here you need to take care of only one parameter which is passed as argument that is the filename containing the keys. You can run it using:
+```ruby
+./rebuild_parts parts_stored.txt
+intelligence
+```
+or you can use the below method and it will assume to read from `parts.txt` in the same directory by default if you leave the argument.
+```ruby
+./rebuild_parts
+intelligence
+```
+
