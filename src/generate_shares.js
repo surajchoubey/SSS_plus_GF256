@@ -4,11 +4,12 @@ const prompt = require("prompt-sync")({
 	sigint: true 
 });
 
-const main = () => {
+export const main = (args) => {
 
-    const input = prompt("Enter a string: (e.g. cypherock) ")
-    const number_of_shares = Number(prompt("Enter number of shares to be made: "));    
-    const number_of_min_shares = Number(prompt("Enter minimum number of shares to create original secret key: "));
+    const input = args[2];
+    const number_of_shares = Number(args[3]); // Number(prompt("Enter number of shares to be made: "));    
+    const number_of_min_shares = Number(args[4]); // Number(prompt("Enter minimum number of shares to create original secret key: "));
+    let filename = args[5];
 
     const shares = generate_shares(number_of_shares, number_of_min_shares, input);
 
@@ -27,10 +28,9 @@ const main = () => {
         output += line.slice(0,-1) + '\n';
     }
 
-    fs.writeFileSync("shares.txt", output);
-    console.log("Each share is successfully written to shares.txt");
+    if(!filename) filename = 'shares.txt';
+
+    fs.writeFileSync(`${filename}`, output);
+    console.log(`Each share is successfully written to ${filename}`);
 
 }
-
-// execute main function
-main();

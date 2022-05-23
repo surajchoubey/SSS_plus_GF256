@@ -1,0 +1,27 @@
+{
+  "name": "@surajchoubey/gf256v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "@surajchoubey/generate_shares": "bin/generate_shares",
+    "generate_shares": "bin/generate_shares",
+    "@surajchoubey/rebuild_parts": "bin/rebuild_parts",
+    "rebuild_parts": "bin/rebuild_parts"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "prompt-sync": "^4.2.0"
+  }
+}

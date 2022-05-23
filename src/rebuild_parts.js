@@ -1,12 +1,13 @@
 const { rebuild_parts } = require('./main.js');
 const fs = require('fs');
 
-const main = () => {
+export const main = (filename) => {
 
-    const content = fs.readFileSync("parts.txt", 'utf-8');
+    if(!filename || filename == '') filename = 'parts.txt';
+    const content = fs.readFileSync(`${filename}`, 'utf-8');
     const split1 = content.split('\n');
 
-    parts = {};
+    const parts = {};
 
     for(const item of split1) {
 
@@ -26,5 +27,3 @@ const main = () => {
     const generated_key = rebuild_parts(parts);
     console.log(generated_key);
 }
-
-main();
