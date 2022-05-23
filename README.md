@@ -1,6 +1,6 @@
 # Shamir Secret Sharing using GF256
 
-This is an CLI app which is an implementation of Shamir Sharing Algorithm coupled with GF256 using NodeJS.
+This is a CLI app which is an implementation of Shamir Sharing Algorithm coupled with GF256 using NodeJS.
 The user can make `n` shares for the original secret key for use minimum `k` keys to generate the original secret key.
 
 ## Setup
@@ -19,10 +19,16 @@ After getting the above task done, and assuming you are in the `bin` directory.
 ## To create the N shares and use minimum K shares to unlock
 
 Here you need to take care of 4 parameters passed as arguments.
-1. `[input-text]` is the original secret key you want to make shares of.
+1. `[secret-text]` is the original secret key you want to make shares of.
 2. `[N]` is the total number of secret keys you want to generate.
 3. `[K]` is the minimum number of shares you want to use to reproduce the original secret key.
 4. `[filename]` is the name of the file where you want to store all the keys.
+<br>
+General format for running `generate_shares` CLI application.
+```ruby
+./generate_shares [secret-text] [N] [K] [filename]
+```
+
 ```ruby
 ./generate_shares intelligence 15 5 store.txt
 Each share is successfully written to store.txt
@@ -67,7 +73,14 @@ Store the keys labelled by their ID in some file called `parts.txt`
 7:129,6,50,175,0,79,188,215,76,0,119,130
 ```
 
-Here you need to take care of only one parameter which is passed as argument that is the filename containing the keys. You can run it using:
+Here you need to take care of only one parameter which is passed as argument that is the filename containing the keys.
+<br>
+General format for running `rebuild_parts` CLI application.
+
+```ruby
+./rebuild_parts [filename]
+```
+Run the app as CLI using:
 ```ruby
 ./rebuild_parts parts_stored.txt
 intelligence
