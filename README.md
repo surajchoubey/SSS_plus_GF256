@@ -1,5 +1,7 @@
 # Shamir Secret Sharing using GF256
 
+![animation gif here experimental demo](animation.gif)
+
 This is a command line application which is an implementation of Shamir Sharing Algorithm coupled with GF256 using NodeJS.
 The user can make `n` shares for the original secret key for use minimum `k` keys to generate the original secret key.
 It is very secure and uses advanced mathematics to create the secret shares. To use it as an CLI application just add the `bin` folder to your path environment variable. For more information you can have a look on to:
