@@ -1,4 +1,4 @@
-# Shamir Secret Sharing using GF256
+# Shamir Secret Sharing using Galois Field 256
 
 ![animation gif here experimental demo](images/animation.gif)
 
