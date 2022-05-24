@@ -1,6 +1,6 @@
 # Shamir Secret Sharing using GF256
 
-![animation gif here experimental demo](animation.gif)
+![animation gif here experimental demo](images/animation.gif)
 
 This is a command line application which is an implementation of Shamir Sharing Algorithm coupled with GF256 using NodeJS.
 The user can make `n` shares for the original secret key for use minimum `k` keys to generate the original secret key.
@@ -38,15 +38,11 @@ General format for running `generate_shares` CLI application.
 generate_shares [secret-text] [N] [K] [filename]
 ```
 
-```ruby
-generate_shares intelligence 15 5 store.txt
-Each share is successfully written to store.txt
-```
+![1st image goes here](images/1.png)
+
 or you can use the below method and all your secret keys are stored in `shares.txt` in the same directory by default if you leave the argument.
-```ruby
-generate_shares intelligence 15 5
-Each share is successfully written to shares.txt
-```
+
+![2nd image goes here](images/2.png)
 
 `shares.txt` from inside looks like this.
 ```
@@ -90,13 +86,10 @@ General format for running `rebuild_parts` CLI application.
 rebuild_parts [filename]
 ```
 Run the app as CLI using:
-```ruby
-rebuild_parts parts_stored.txt
-intelligence
-```
+
+![3rd image goes here](images/4.png)
+
 or you can use the below method and it will assume to read from `parts.txt` in the same directory by default if you leave the argument.
-```ruby
-rebuild_parts
-intelligence
-```
+
+![4th image goes here](images/3.png)
 
