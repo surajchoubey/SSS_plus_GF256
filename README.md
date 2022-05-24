@@ -19,7 +19,6 @@ Clone the repo, `cd` into it, and install node package modules.
 git clone https://github.com/surajchoubey/SSS_plus_GF256/
 cd SSS_plus_GF256/
 npm install
-cd bin/
 ```
 ## Running the program
 
@@ -34,6 +33,7 @@ Here you need to take care of 4 parameters passed as arguments.
 4. `[filename]` is the name of the file where you want to store all the keys.
 <br>
 General format for running `generate_shares` CLI application.
+
 ```ruby
 generate_shares [secret-text] [N] [K] [filename]
 ```
