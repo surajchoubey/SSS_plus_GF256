@@ -31,7 +31,8 @@ Here you need to take care of 4 parameters passed as arguments.
 2. `[N]` is the total number of secret keys you want to generate.
 3. `[K]` is the minimum number of shares you want to use to reproduce the original secret key.
 4. `[filename]` is the name of the file where you want to store all the keys.
-<br>
+
+
 General format for running `generate_shares` CLI application.
 
 ```ruby
