@@ -22,7 +22,7 @@ npm install
 ```
 ## Running the program
 
-After getting the above task done, and assuming you are in the `bin` directory.
+After getting the above task done, and assuming you have added the `bin` directory to the environment PATH variable.
 
 ## To create the N shares and use minimum K shares to unlock
 
